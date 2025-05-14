@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>WELCOME</title>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+          integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+          crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&amp;subset=cyrillic,vietnamese" rel="stylesheet">
+    <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+</head>
+<body>
+
+<div th:replace="navi/navbar"></div>
+<div id="container">
+
+    <div class="module darken"><div class="srodek"><p>Welcome to the "KIGALI" restaurant</p></div></div>
+
+    <div class="album py-5">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card mb-4 box-shadow">
+                        <img class="card-img-top" th:src="@{images/american.jpg}" alt="Card image cap" height=250px width=230px >
+                        <div class="card-body">
+                            <p class="card-text">Classic burgers straight from the United States.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a href="/menu/category/amerykanska">
+                                        <button type="button" class="btn btn-sm btn-outline-secondary">See menu</button>
+                                    </a>
+                                </div>
+                                <small class="text-muted">
+                                    <i class="far fa-clock">20mins</i>
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4 box-shadow">
+                        <img class="card-img-top" th:src="@{images/asia.jpg}" alt="Card image cap" height=250px width=230px >
+                        <div class="card-body">
+                            <p class="card-text">Crustaceans, bugs from the streets of Japan.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a href="/menu/category/azjatycka">
+                                        <button type="button" class="btn btn-sm btn-outline-secondary">See menu</button>
+                                    </a>
+                                </div>
+                                <small class="text-muted">
+                                    <i class="far fa-clock">30mins</i>
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4 box-shadow">
+                        <img class="card-img-top" th:src="@{images/italia.jpg}" alt="Card image cap" height=250px width=230px >
+                        <div class="card-body">
+                            <p class="card-text">Taste the flavors from the sea.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a href="/menu/category/wloska">
+                                        <button type="button" class="btn btn-sm btn-outline-secondary">See menu</button>
+                                    </a>
+                                </div>
+                                <small class="text-muted">
+                                    <i class="far fa-clock">20mins</i>
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card mb-4 box-shadow">
+                        <img class="card-img-top" th:src="@{images/meksyk.jpg}" alt="Card image cap" height=250px width=230px >
+                        <div class="card-body">
+                            <p class="card-text">Spicy flavors wrapped in wheat tortillas.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a href="/menu/category/meksykanska">
+                                        <button type="button" class="btn btn-sm btn-outline-secondary">See menu</button>
+                                    </a>
+                                </div>
+                                <small class="text-muted">
+                                    <i class="far fa-clock">40mins</i>
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4 box-shadow">
+                        <img class="card-img-top" th:src="@{images/pizza.jpg}" alt="Card image cap" height=250px width=230px >
+                        <div class="card-body">
+                            <p class="card-text">Classic pizzas.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a href="/menu/category/pizze">
+                                        <button type="button" class="btn btn-sm btn-outline-secondary">See menu</button>
+                                    </a>
+                                </div>
+                                <small class="text-muted">
+                                    <i class="far fa-clock">35mins</i>
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4 box-shadow">
+                        <img class="card-img-top" th:src="@{images/drinks.jpg}" alt="Card image cap" height=250px width=230px >
+                        <div class="card-body">
+                            <p class="card-text">Drinks perfect for winter evenings.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a href="/menu/category/drinki">
+                                        <button type="button" class="btn btn-sm btn-outline-secondary">See menu</button>
+                                    </a>
+                                </div>
+                                <small class="text-muted">
+                                    <i class="far fa-clock">10mins</i>
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+            <div class="col-md-7">
+                <div class="text-center">
+        <span style=" margin: 200px;">
+        <h2 class="featurette-heading">Quality Guarantee!</h2>
+        <p class="lead">The best quality proven by thousands of people.</p>
+        </span>
+                </div>
+            </div>
+            <div class="col-md-5">
+         <span style="font-size: 100px; margin: 100px;">
+            <i class="fas fa-user-check"></i>
+            </span>
+            </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+            <div class="col-md-7 order-md-2">
+                <div class="text-center">
+            <span style=" margin: 200px;">
+        <h2 class="featurette-heading">Fast Delivery!</h2>
+        <p class="lead">As soon as the meal is prepared, our delivery person sets off on the way.</p>
+            </span>
+                </div>
+            </div>
+            <div class="col-md-5 order-md-1">
+         <span style="font-size: 100px; margin: 200px;">
+            <i class="fas fa-shipping-fast"></i>
+            </span>
+            </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+            <div class="col-md-7">
+                <div class="text-center">
+            <span style=" margin: 200px;">
+        <h2 class="featurette-heading">Hot Food!</h2>
+        <p class="lead">Thanks to special containers, our meals are always hot.</p>
+            </span>
+                </div>
+            </div>
+            <div class="col-md-5">
+         <span style="font-size: 100px; margin: 100px;">
+            <i class="fas fa-hot-tub"></i>
+            </span>
+            </div>
+        </div>
+
+        <hr class="featurette-divider">
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+            integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+            integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+            crossorigin="anonymous"></script>
+</div>
+<div th:replace="navi/footer"></div>
+</body>
+</html>

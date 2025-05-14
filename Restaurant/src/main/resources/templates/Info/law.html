@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>WELCOME</title>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+          integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+          crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&amp;subset=cyrillic,vietnamese" rel="stylesheet">
+    <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+</head>
+<body>
+
+<div th:replace="navi/navbar"></div>
+<div class="container">
+    <div class="text-center">
+        <h1>Terms and Conditions</h1>
+    </div>
+    <div class="text-center-left">
+        <h4>The restaurant "Faradenza" is located in Gdańsk at Zaliczeniowa 5.</h4>
+        <h4>The restaurant premises include: the building of the restaurant, the adjacent area (garden), and parking. These terms and conditions apply to the entire property.</h4>
+        <h4>Each guest of the "Faradenza" restaurant is obliged to familiarize themselves with and comply with these terms and conditions. Being on the premises of the restaurant is considered acceptance of these terms and conditions.</h4>
+        <h4>Complaints about dishes will only be considered during consumption, not after it is finished.</h4>
+        <h4>The "Faradenza" restaurant is not responsible for any damages resulting from reckless behavior, especially cuts or other bodily injuries sustained while on the restaurant's premises.</h4>
+        <h4>The restaurant is not responsible for items left unattended on its premises.</h4>
+        <h4>Parents or guardians are responsible for children on the restaurant premises. The restaurant is not responsible for children left unattended.</h4>
+        <h4>Intoxicated individuals may not be served. Restaurant staff may ask intoxicated persons to leave the premises.</h4>
+        <h4>We do not sell alcohol to persons under 18 years of age or to intoxicated individuals.</h4>
+        <h4>Entry to the "Faradenza" restaurant implies the customer's consent to being photographed and filmed and for their image to be used free of charge by the restaurant for marketing purposes. Persons who do not agree to this are asked to inform the staff.</h4>
+        <h4>Any guest who violates the law or the restaurant’s regulations or damages the property will face financial and legal consequences.</h4>
+        <h4>Guests are required to show their discount card before placing an order. The discount may not be applied if the card is shown later.</h4>
+        <h4>The terms and conditions are publicly available on the website https://guarded-earth-39191.herokuapp.com/?fbclid=IwAR31eeKuI_szkQUagRKzThKEA-o4KOQKHL-GSMHOvv9E6upkTXgOoxQqsHA and are available at the "Faradenza" restaurant at Zaliczeniowa 2, 95-002 Gdańsk.</h4>
+        <h4>The "Faradenza" restaurant is not responsible for errors in printed promotional materials, leaflets, brochures, etc.</h4>
+        <h4>The "Faradenza" restaurant reserves the right to change these terms and conditions at any time without notice.</h4>
+        <h4>These terms and conditions are effective from 01.12.2018.</h4>
+    </div>
+</div>
+<div th:replace="navi/footer"></div>
+</body>
+</html>

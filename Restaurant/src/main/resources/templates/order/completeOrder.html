@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Restaurant</title>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+          integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+          crossorigin="anonymous">
+    <link href="../../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet">
+</head>
+
+<body>
+<!-- Navbar -->
+<div th:replace="navi/navbar"></div>
+
+<!-- Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-xl-8 offset-xl-2">
+            <h1 class="mt-5">Your Order:</h1>
+            <ul class="list-unstyled">
+                <!-- Loop through orders -->
+                <li class="my-2 border rounded p-2" th:each="o : ${order}">
+                    <h4>Order Details:</h4>
+                    <ul>
+                        <!-- Loop through meals inside an order -->
+                        <li th:each="m : ${o.meals}">
+                            <span th:text="${m.name}">Meal Name</span>
+                        </li>
+                    </ul>
+                    <h4>Total Price: <span th:text="${price}">0</span></h4>
+                </li>
+            </ul>
+            <!-- Action buttons -->
+            <a class="btn btn-success mr-3" th:href="@{/order/priority}">Confirm</a>
+            <a class="btn btn-primary" th:href="@{/menu}">Menu</a>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<div th:replace="navi/footer"></div>
+
+<!-- Scripts -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" crossorigin="anonymous"></script>
+</body>
+</html>
