@@ -24,8 +24,7 @@ public class Meal {
     @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name="categoryId")
     private Category category;
-    @ManyToMany(cascade = CascadeType.PERSIST, mappedBy = "meals")
-    private List<Order> orders = new ArrayList<>();
+
 
 
     @Override

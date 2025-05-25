@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Reservation Approval</title>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+          integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+          crossorigin="anonymous">
+    <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+          integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+          crossorigin="anonymous">
+</head>
+<body>
+<div th:replace="navi/navbar2"></div>
+<br/><br/>
+<div class="container">
+    <div class="row">
+        <div class="col-xl-8 offset-xl-2">
+            <h2>Reservation Approval</h2>
+            <form th:action="@{/manager/approve}" method="post" th:object="${reservationApproval}">
+                <input type="hidden" th:field="*{id}"/>
+
+                <div class="form-group">
+                    <label class="h5">Customer Name:</label>
+                    <input type="text" th:field="*{customerName}" class="form-control" readonly>
+                </div>
+
+                <div class="form-group">
+                    <label class="h5">Reservation Date & Time:</label>
+                    <input type="text" th:field="*{reservationDateTime}" class="form-control" readonly>
+                </div>
+
+                <div class="form-group">
+                    <label class="h5">Number of Guests:</label>
+                    <input type="number" th:field="*{guestCount}" class="form-control" readonly>
+                </div>
+
+                <div class="form-group">
+                    <label for="status" class="h5">Approval Status:</label>
+                    <select id="status" th:field="*{status}" class="form-control" required>
+                        <option value="" disabled selected>Select status</option>
+                        <option value="APPROVED">Approve</option>
+                        <option value="REJECTED">Reject</option>
+                        <option value="PENDING">Pending</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="comments" class="h5">Comments (optional):</label>
+                    <textarea id="comments" th:field="*{comments}" class="form-control" rows="3"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="Submit" class="btn btn-success">
+                    <a class="btn btn-secondary" th:href="@{/manager/reservations}">Back to Reservations</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div th:replace="navi/footer"></div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+        integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+        integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+        crossorigin="anonymous"></script>
+</body>
+</html>

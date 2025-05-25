@@ -2,15 +2,11 @@ package com.app.restaurant.controller;
 
 import com.app.restaurant.model.Category;
 import com.app.restaurant.model.Meal;
-import com.app.restaurant.model.Order;
-import com.app.restaurant.model.OrderStatus;
 import com.app.restaurant.repository.CategoryRepository;
 import com.app.restaurant.repository.CustomerRepository;
 import com.app.restaurant.repository.MealRepository;
-import com.app.restaurant.repository.OrderRepository;
 import com.app.restaurant.service.CategoryService;
 import com.app.restaurant.service.MealService;
-import com.app.restaurant.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -28,10 +24,6 @@ public class ManagerController {
     CategoryRepository categoryRepository;
     @Autowired
     CategoryService categoryService;
-    @Autowired
-    OrderRepository orderRepository;
-    @Autowired
-    OrderService orderService;
     @Autowired
     CustomerRepository customerRepository;
 
@@ -100,7 +92,7 @@ public class ManagerController {
 
     @GetMapping("/orders")
     public String viewAllOrder(Model model) {
-        model.addAttribute("order", orderService.findAllByOrderStatusNotCompleted());
+        //model.addAttribute("order", orderService.findAllByOrderStatusNotCompleted());
         model.addAttribute("customer", customerRepository.findAll());
         model.addAttribute("meal", mealRepository.findAll());
         return "manager/allOrders";
@@ -108,7 +100,7 @@ public class ManagerController {
 
     @GetMapping("/orders/done")
     public String viewAllOrderDone(Model model) {
-        model.addAttribute("order", orderService.getAllOrdersWithCompletedStatus());
+      //  model.addAttribute("order", orderService.getAllOrdersWithCompletedStatus());
         model.addAttribute("customer", customerRepository.findAll());
         model.addAttribute("meal", mealRepository.findAll());
         return "manager/doneOrders";
@@ -118,39 +110,6 @@ public class ManagerController {
 
     /*OrderAll operations */
 
-    @PostMapping("/orders/statusdone")
-    public String setOrderAsDone(@RequestParam Long id) {
-        try {
-            Order o = orderRepository.getOne(id);
-            o.setOrderStatus(OrderStatus.Completed);
-            orderRepository.saveAndFlush(o);
-            return "redirect:/manager/orders";
-        } catch (Exception e) {
-            throw new NullPointerException("error");
-        }
+
     }
 
-    @PostMapping("/orders/delete")
-    public String deleteOrder(@RequestParam Long id) {
-        try {
-            orderRepository.deleteById(id);
-            return "redirect:/manager/orders";
-        } catch (Exception e) {
-            throw new NullPointerException("error");
-        }
-    }
-
-    @PostMapping("/orders/cancel")
-    public String cancelOrder(@RequestParam Long id) {
-        try {
-            Order o = orderRepository.getOne(id);
-            o.setOrderStatus(OrderStatus.Cancelled);
-            orderRepository.saveAndFlush(o);
-            return "redirect:/manager/orders";
-        } catch (Exception e) {
-            throw new NullPointerException("error");
-        }
-    }
-
-
-}

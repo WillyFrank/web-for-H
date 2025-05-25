@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Tables</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+</head>
+<body>
+<h1>All Tables</h1>
+
+<a th:href="@{/manager/table/new}" class="btn">Add New Table</a>
+
+<div th:if="${#lists.isEmpty(tables)}">
+    <p>No tables found.</p>
+</div>
+
+<table th:if="${!#lists.isEmpty(tables)}">
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>Seats</th>
+        <th>Status</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="t : ${tables}">
+        <td th:text="${t.tableNumber}">1</td>
+        <td th:text="${t.capacity}">4</td>
+        <td th:text="${t.status}">Available</td>
+        <td>
+            <a th:href="@{|/manager/table/${t.tableId}/edit|}">Edit</a> |
+            <a th:href="@{|/manager/table/${t.tableId}/delete|}"
+               onclick="return confirm('Delete this table?');">Delete</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

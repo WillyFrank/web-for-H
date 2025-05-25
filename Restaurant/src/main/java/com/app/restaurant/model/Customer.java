@@ -28,8 +28,6 @@ public class Customer {
     @OneToOne(cascade = CascadeType.PERSIST, mappedBy = "customer")
     private PaymentDetail paymentDetail;
 
-    @OneToMany(cascade = CascadeType.PERSIST, mappedBy = "customer", fetch = FetchType.EAGER)
-    private List<Order> orders = new ArrayList<>();
 
 
     @Override
